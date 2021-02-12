@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from '@material-ui/core';
 
 function App() {
   const [todos, setTodos] = useState(['take dogs out','anything']);
@@ -20,7 +21,10 @@ function App() {
 
      <form>
        <input value={input} onChange = {event => setinput(event.target.value)}/>
-       <button onClick={addTodo} >ADD ToDo</button>
+       <Button onClick={addTodo} type='submit' variant="contained" color="primary">
+         Primary
+       </Button>
+       {/* <button onClick={addTodo} >ADD ToDo</button> */}
      </form>
       
       
