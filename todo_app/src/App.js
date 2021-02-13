@@ -34,8 +34,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-     <h1>Hello User</h1>
+    <div className="todo-app">
+     <h1>Hello User, what's the plan today?</h1>
 
       <form>
         

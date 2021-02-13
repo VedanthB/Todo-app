@@ -3,6 +3,7 @@ import { List, ListItem, ListItemAvatar , ListItemText, Modal , Button } from '@
 import db from './firebase'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { makeStyles } from '@material-ui/core/styles';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -43,17 +44,16 @@ function Todo(props) {
          <div className={classes.paper}>
              <h1></h1>
              <input placeholder={props.todo.todo} value={input} onChange = {event => setInput(event.target.value)}/>
-             <Button onClick={updateTodo}>Update todo</Button>
+             <Button onClick={updateTodo} n >Update todo</Button>
          </div>
         </Modal>
 
-        <List>
+        <List className=''>
           <ListItem>
-              <ListItemAvatar>
-             </ListItemAvatar>
-              <ListItemText primary={props.todo.todo} secondary="Dummy Deadline⏰" />
+              
+              <ListItemText className='todo-row' primary={props.todo.todo} secondary="Dummy Deadline⏰" />
            </ListItem>
-           <button onClick={e => setOpen(true)}>Edit</button>
+           <EditIcon onClick={e => setOpen(true)} />
            <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()} />
         </List>
         </>
